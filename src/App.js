@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+// import './index.css'
+import { Route,Routes } from 'react-router-dom';
+import Products from './shop/Products'
+import Cart from './shop/Cart';
+import UserDetails from './components/UserDetails'
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <>
+
+    <div className='app'>
+      {/* <h1>redux toolkit</h1> */}
+      {/* <UserDetails/> */}
+      {/* <DeleteUser/> */}
+
+      <Routes>
+      
+        <Route path={'/'} element={<Products/>}/>
+        <Route path={'/cart'} element={<Cart/>}/>
+        <Route path={'/user'} element={<UserDetails/>}/>
+
+
+      </Routes>
+      
+
     </div>
-  );
+  </>
+  )
 }
 
-export default App;
+export default App
